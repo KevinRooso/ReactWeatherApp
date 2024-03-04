@@ -2,15 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import SearchFilter from './SearchFilter';
+import WeatherWidget from './WeatherWidget';
 
 function App() {
 
-  const [widgets, setWidget] = useState([]);
+  const [weatherWidgets, setWeatherWidgets] = useState([]);
   const [location, setLocation] = useState('');
 
   const handleSearch = (city) =>{
     console.log("Searching for", city);
     setLocation(city);
+
+    const newWidget = <WeatherWidget cityName={city} />;
+    setWeatherWidgets([...weatherWidgets,newWidget]);
   }
 
   return (
@@ -21,8 +25,11 @@ function App() {
       <div class="m-3">
         <SearchFilter onSearch={handleSearch} />
       </div>
-      <div>
+      {/* <div>
         {location && <p> Searching weather for: {location}</p>}
+      </div> */}
+      <div class="row">
+        {weatherWidgets}
       </div>
     </div>
   );
