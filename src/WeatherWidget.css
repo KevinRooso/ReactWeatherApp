@@ -1,52 +1,66 @@
-.card{
-    padding: 1rem;
-    margin: 1.5rem 4vw;
+.card {
     border-radius: 1rem;
-    background-color: rgba(238, 237, 237, 0.22);
-    border-color: rgba(238, 237, 237, 0.22);
-    box-shadow: 5px 6px 6px 2px #e9ecef;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}.card{
-    padding: 1rem;
-    margin: 1.5rem 4vw;
-    border-radius: 1rem;
-    background-color: rgba(238, 237, 237, 0.22);
-    border-color: rgba(238, 237, 237, 0.22);
-    box-shadow: 5px 6px 6px 2px #e9ecef;
-    text-align: center;
-}
-@media(max-width:768px){
-    .card{
-        margin: 1.5rem;
-    }
-}
-.title{
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%)
-}
-.title p{
-    margin-bottom: 0.2rem;
-    font-size: 1.2rem;
-}
-.temp{
-    font-size: 2.6rem;
+    transition: all 0.3s ease-in-out;
+    height: 300px;
+    padding: 2rem 2rem 1rem; 
+    margin: 2rem 4vw;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 1rem;
-}
-.header{
-    color: #dddddd;
-}
-.col-4{
-    padding: 0 0.2rem;
-}
-.icon{
-    align-self: flex-end;
-    margin-right: -2.5rem;
-    margin-top: -2rem;
+    color: #333;
+  }
+  
+  .temp {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #f00;
+  }
+  
+  .header {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .value {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .icon {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
     z-index: 999;
-}
-.icon img{
-    width: 5rem;
-}
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .col-4 {
+    padding: 0 1rem;
+  }
+  
+  .row {
+    margin-bottom: 1rem;
+  }

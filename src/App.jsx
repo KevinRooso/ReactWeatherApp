@@ -3,18 +3,26 @@ import './App.css';
 import { useState } from 'react';
 import SearchFilter from './SearchFilter';
 import WeatherWidget from './WeatherWidget';
+import { fetchWeatherData } from './api-utils'; 
 
 function App() {
 
   const [weatherWidgets, setWeatherWidgets] = useState([]);
   const [location, setLocation] = useState('');
+  const [weatherData, setWeatherData] = useState({});
 
-  const handleSearch = (city) =>{
+  const handleSearch = async (city) =>{
     console.log("Searching for", city);
     setLocation(city);
+    try {
+      const weatherData = await fetchWeatherData(city);
+      setWeatherData(weatherData);
 
-    const newWidget = <WeatherWidget cityName={city} />;
-    setWeatherWidgets([...weatherWidgets,newWidget]);
+      const newWidget = <WeatherWidget cityName={city} weatherData={weatherData} />;
+      setWeatherWidgets([...weatherWidgets, newWidget]);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
